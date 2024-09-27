@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculate Percentage</title>
+  </head>
+  <body>
+    <h2>Calculate Marks Percentage</h2>
+    <input type="number" id="math" placeholder="Math" /> <br />
+    <input type="number" id="science" placeholder="Science" /><br />
+    <input type="number" id="english" placeholder="English" /> <br />
+    <button onclick="calculatePercentage()">Calculate</button> <br />
+    <p id="result"></p>
+
+    <script>
+      function calculatePercentage() {
+        var math = parseFloat(document.getElementById("math").value);
+        var science = parseFloat(document.getElementById("science").value);
+        var english = parseFloat(document.getElementById("english").value);
+        var total = math + science + english;
+        var percentage = (total / 300) * 100;
+        document.getElementById("result").innerText =
+          "Total Marks" +
+          total.toFixed(2) +
+          "Percentage: " +
+          percentage.toFixed(2) +
+          "%";
+      }
+    </script>
+  </body>
+</html>

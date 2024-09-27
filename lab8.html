@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Form Validation</title>
+  </head>
+  <body>
+    <h2>Login Form</h2>
+    <form onsubmit="return validateForm()">
+      <label>Username:</label><br />
+      <input
+        type="text"
+        id="username"
+        placeholder="Enter Username"
+      /><br /><br />
+      <p id="erroruser" style="color: red"></p>
+      <label>Password:</label><br />
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter Password"
+      /><br /><br />
+      <p id="errorpass" style="color: red"></p>
+      <input type="submit" value="Login" />
+    </form>
+    <p id="error" style="color: red"></p>
+
+    <script>
+      function validateForm() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        if (username == "") {
+          document.getElementById("erroruser").innerHTML =
+            "Username is required *";
+          return false;
+        } else if (password == "") {
+          document.getElementById("errorpass").innerHTML =
+            "Password is required *";
+          return false;
+        } else if (username === password) {
+          document.getElementById("error").innerHTML =
+            "Username and Password cannot be the same.";
+          return false;
+        } else if (username.length < 5 || username.length > 15) {
+          document.getElementById("erroruser").innerHTML =
+            "Username must be between 5 and 15 characters *";
+          return false;
+        } else if (password.length < 8) {
+          document.getElementById("errorpass").innerHTML =
+            "Password must be at least 8 characters long *";
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </body>
+</html>

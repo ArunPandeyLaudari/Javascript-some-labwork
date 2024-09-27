@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Interest</title>
+  </head>
+  <body>
+    <p>Calculate the simple Interest</p>
+    <input type="text" placeholder="principle" name="" id="principle" />
+    <input type="text" placeholder="year" name="" id="time" />
+    <input type="text" placeholder="rate" name="" id="rate" />
+    <button onclick="calculate()">Simple Interest</button>
+    <h2 id="amount"></h2>
+    <script>
+      function calculate() {
+        let p = parseFloat(document.getElementById("principle").value);
+        let t = parseFloat(document.getElementById("time").value);
+        let r = parseFloat(document.getElementById("rate").value);
+
+        let simpleinterest = (p * t * r) / 100;
+        document.getElementById(
+          "amount"
+        ).innerHTML = `Simple Interset =${simpleinterest}`;
+      }
+    </script>
+  </body>
+</html>

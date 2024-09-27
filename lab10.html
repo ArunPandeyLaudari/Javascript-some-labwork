@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Form</title>
+  </head>
+  <body>
+    <h2>Registration Form</h2>
+    <form onsubmit="return validateRegistration()">
+      <label>Name:</label><br />
+      <input type="text" id="name" placeholder="Enter Name" /><br /><br />
+      <label>Phone:</label><br />
+      <input type="text" id="phone" placeholder="Enter Phone" /><br /><br />
+      <label>Email:</label><br />
+      <input type="text" id="email" placeholder="Enter Email" /><br /><br />
+      <label>Username:</label><br />
+      <input
+        type="text"
+        id="username"
+        placeholder="Enter Username"
+      /><br /><br />
+      <label>Password:</label><br />
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter Password"
+      /><br /><br />
+      <input type="checkbox" id="terms" /> I accept the terms and conditions<br /><br />
+      <input type="submit" value="Register" />
+    </form>
+    <p id="error"></p>
+
+    <script>
+      function validateRegistration() {
+        var name = document.getElementById("name").value;
+        var phone = document.getElementById("phone").value;
+        var email = document.getElementById("email").value;
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var terms = document.getElementById("terms").checked;
+        var error = "";
+
+        if (!name || !phone || !email || !username || !password || !terms) {
+          error = "All fields are required.";
+        } else if (name.length < 5) {
+          error = "Name must be at least 5 characters.";
+        } else if (!/^9[87]\d{8}$/.test(phone)) {
+          error = "Phone must start with 98 or 97 and be 10 digits long.";
+        } else if (username === password) {
+          error = "Username and Password cannot be the same.";
+        } else if (password.length < 8) {
+          error = "Password must be at least 8 characters long.";
+        } else if (!terms) {
+          error = "You must accept the terms and conditions.";
+        }
+
+        if (error) {
+          document.getElementById("error").innerText = error;
+          return false;
+        }
+        return true;
+      }
+    </script>
+  </body>
+</html>

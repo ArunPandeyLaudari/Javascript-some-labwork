@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display clock</title>
+  </head>
+  <body>
+    <h2>Dispay Clock</h2>
+    <span id="hrs">0</span>: <span id="min">0</span>:
+    <span id="sec">0</span>
+    <script>
+      function updatetime() {
+        let d = new Date();
+
+        document.getElementById("hrs").innerHTML = d.getHours();
+        document.getElementById("min").innerHTML = d.getMinutes();
+        document.getElementById("sec").innerHTML = d.getSeconds();
+      }
+
+      setInterval(updatetime, 1000);
+      updatetime();
+    </script>
+  </body>
+</html>

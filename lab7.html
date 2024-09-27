@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser Navigation Example</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>page1</h1>
+    <p>
+      Use the buttons below to navigate back and forward in your browser's
+      history.
+    </p>
+
+    <button onclick="goBack()">Back</button>
+    <button onclick="goForward()">Forward</button>
+
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+
+      function goForward() {
+        window.history.forward();
+      }
+    </script>
+  </body>
+</html>

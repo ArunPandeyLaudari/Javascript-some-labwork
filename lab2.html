@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arithmetic Operator</title>
+  </head>
+  <body>
+    <p>Enter Two Number</p>
+    <input type="number" id="num1" />; <input type="number" id="num2" />;
+    <button onclick="add()">Add</button>
+    <button onclick="sub()">Sub</button>
+    <button onclick="mul()">Mul</button>
+    <button onclick="div()">Div</button>
+    <button onclick="rem()">Rem</button>
+    <p id="result"></p>
+    <script>
+      function add() {
+        const x = parseFloat(document.getElementById("num1").value);
+        const y = parseFloat(document.getElementById("num2").value);
+        let sum = x + y;
+        document.getElementById(
+          "result"
+        ).innerHTML = `sum of ${x} and ${y} = ${sum}`;
+      }
+
+      function sub() {
+        const x = parseFloat(document.getElementById("num1").value);
+        const y = parseFloat(document.getElementById("num2").value);
+        let sub = x - y;
+        document.getElementById(
+          "result"
+        ).innerHTML = `sub of ${x} and ${y} = ${sub}`;
+      }
+
+      function mul() {
+        const x = parseFloat(document.getElementById("num1").value);
+        const y = parseFloat(document.getElementById("num2").value);
+        let mul = x * y;
+        document.getElementById(
+          "result"
+        ).innerHTML = `mul of ${x} and ${y} = ${mul}`;
+      }
+      function div() {
+        const x = parseFloat(document.getElementById("num1").value);
+        const y = parseFloat(document.getElementById("num2").value);
+
+        if (y != 0) {
+          let div = x / y;
+          document.getElementById(
+            "result"
+          ).innerHTML = `Division of ${x} and ${y} = ${div}`;
+        } else {
+          document.getElementById(
+            "result"
+          ).innerHTML = `Can't Devisible by zero`;
+        }
+      }
+
+      function rem() {
+        const x = parseFloat(document.getElementById("num1").value);
+        const y = parseFloat(document.getElementById("num2").value);
+        let mul = x % y;
+        document.getElementById(
+          "result"
+        ).innerHTML = `rem of ${x} and ${y} = ${mul}`;
+      }
+    </script>
+  </body>
+</html>
